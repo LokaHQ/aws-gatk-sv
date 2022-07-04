@@ -25,7 +25,7 @@ sudo chmod 755 /var/run/docker.sock
 # The working AWS FSx code is uploaded in the report mentioned due to on-going PR with Broad.
 cd /home/ec2-user
 git init
-git remote add origin -f https://github.com/goldfinchbio/aws-gatk-sv.git
+git remote add origin -f https://github.com/LokaHQ/aws-gatk-sv.git
 echo "gatk-sv" > .git/info/sparse-checkout
 git pull origin master
 # This will be hard-coded to a particular release/tag if Broad is unable to maintain it.
