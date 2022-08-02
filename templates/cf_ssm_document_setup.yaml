@@ -38,6 +38,6 @@ Resources:
                 - |
                     #!/bin/bash
                     cd /home/ec2-user
-                    git clone https://github.com/goldfinchbio/aws-gatk-sv.git
+                    git clone https://github.com/lokahq/aws-gatk-sv.git
                     chmod 777 -R aws-gatk-sv
                     sh aws-gatk-sv/scripts/aws_setup_script.sh {{S3OrFSXPath}}

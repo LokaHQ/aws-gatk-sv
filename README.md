@@ -15,8 +15,8 @@
   If the license is available, please create a melt docker manually as per steps in docs/create_melt_docker.md
   
   If the license is not available, please mark "use_melt" flags as "false". This can also be achieved by uncommenting below lines from the setup script before running the setup.
-  https://github.com/goldfinchbio/aws-gatk-sv/blob/master/scripts/aws_setup_script.sh#L49
-  https://github.com/goldfinchbio/aws-gatk-sv/blob/master/scripts/aws_setup_script.sh#L50
+  https://github.com/lokahq/aws-gatk-sv/blob/master/scripts/aws_setup_script.sh#L49
+  https://github.com/lokahq/aws-gatk-sv/blob/master/scripts/aws_setup_script.sh#L50
 
   Note this would need manual invocation of setup script from EC2 instance.
 
@@ -25,7 +25,7 @@
 
   Deploy the SSM Document using following command using the profile of your desired AWS Account & Region
   ```bash
-        wget https://github.com/goldfinchbio/aws-gatk-sv/blob/master/templates/cf_ssm_document_setup.yaml\?raw\=true -O cf_ssm_document_setup.yaml
+        wget https://github.com/lokahq/aws-gatk-sv/blob/master/templates/cf_ssm_document_setup.yaml\?raw\=true -O cf_ssm_document_setup.yaml
         aws cloudformation deploy --profile <AWS_PROFILE> --region <AWS_REGION> --stack-name "gatk-sv-ssm-deploy" --template cf_ssm_document_setup.yaml
   ```
 
@@ -74,4 +74,4 @@
     cromshell status
 ```
 
-The mapping of AWS Batch Job Names and GATK-SV Module and Sub-module name can be viewed from the [Job_Names_and_Modules.csv](https://github.com/goldfinchbio/aws-gatk-sv/blob/master/configs/job_names_and_modules.csv)
+The mapping of AWS Batch Job Names and GATK-SV Module and Sub-module name can be viewed from the [Job_Names_and_Modules.csv](https://github.com/lokahq/aws-gatk-sv/blob/master/configs/job_names_and_modules.csv)
