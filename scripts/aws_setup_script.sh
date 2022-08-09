@@ -23,20 +23,20 @@ sudo chmod 755 /var/run/docker.sock
 
 # Download the gatk-sv github repo
 # The working AWS FSx code is uploaded in the report mentioned due to on-going PR with Broad.
-cd /home/ec2-user
-git init
-git remote add origin -f https://github.com/LokaHQ/aws-gatk-sv.git
-echo "gatk-sv" > .git/info/sparse-checkout
-git pull origin master
+#cd /home/ec2-user
+#git init
+#git remote add origin -f https://github.com/LokaHQ/aws-gatk-sv.git
+#echo "gatk-sv" > .git/info/sparse-checkout
+#git pull origin master
 # This will be hard-coded to a particular release/tag if Broad is unable to maintain it.
 # Uncomment below once tagged version from Broad is created and specify the Version.
 # wget https://github.com/broadinstitute/gatk-sv/archive/refs/tags/v<UPDATE_LATER>.zip
 # unzip v<UPDATE_LATER>.zip
 # mv gatk-sv-<UPDATE_LATER> gatk-sv
-chmod 755 -R gatk-sv
+#chmod 755 -R gatk-sv
 
 # Create the required code and reference files.
-cd gatk-sv
+cd aws-gatk-sv/gatk-sv
 mkdir gatk_run 
 python3 -m pip install jinja2
 BASE_DIR=$(pwd)
