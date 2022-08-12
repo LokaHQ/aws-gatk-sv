@@ -1,3 +1,4 @@
+set -x
 # Update the below variables
 S3_OR_FSX=$1
 BROAD_REF_PATH="${S3_OR_FSX}/reference/broad-ref"
