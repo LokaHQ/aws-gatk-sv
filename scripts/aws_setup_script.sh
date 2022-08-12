@@ -77,7 +77,7 @@ done
 
 # Upload the images to ECR
 # wget https://github.com/lokahq/aws-gatk-sv/blob/master/scripts/upload_images_ecr.sh\?raw\=true -O upload_images_ecr.sh
-cd ../scripts
+cd ../../scripts
 chmod 755 upload_images_ecr.sh
 sh upload_images_ecr.sh -r "${AWS_REGION}" -e "${ECR_REPO_NAME}"
 
