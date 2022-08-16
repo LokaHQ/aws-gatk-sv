@@ -12,10 +12,10 @@ ECR_REPO_NAME="sv-pipeline"
 
 # Install docker
 whoami
-sudo yum install -y jq
-sudo amazon-linux-extras install -y docker
-sudo groupadd docker
+sudo yum install -y jq docker
+#sudo amazon-linux-extras install -y docker
 sudo usermod -aG docker ec2-user
+id ec2-user
 newgrp docker
 docker run hello-world
 
