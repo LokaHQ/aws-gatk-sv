@@ -14,14 +14,20 @@ ECR_REPO_NAME="sv-pipeline"
 whoami
 sudo yum install -y jq
 sudo amazon-linux-extras install -y docker
+sudo groupadd docker
 sudo usermod -aG docker ec2-user
-sudo service docker start
-sudo chkconfig docker on
-# sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-"$(uname -s)"-"$(uname -m)" -o /usr/local/bin/docker-compose
-sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-"$(uname -s)"-"$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose version
-sudo chmod 755 /var/run/docker.sock
+newgrp docker
+docker run hello-world
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+# sudo service docker start
+# sudo chkconfig docker on
+# # sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-"$(uname -s)"-"$(uname -m)" -o /usr/local/bin/docker-compose
+# sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-"$(uname -s)"-"$(uname -m)" -o /usr/local/bin/docker-compose
+# sudo chmod +x /usr/local/bin/docker-compose
+# docker-compose version
+# sudo chmod 755 /var/run/docker.sock
 
 # Download the gatk-sv github repo
 # The working AWS FSx code is uploaded in the report mentioned due to on-going PR with Broad.
