@@ -18,7 +18,7 @@ sudo usermod -aG docker ec2-user
 id ec2-user
 newgrp docker
 sudo service docker start
-sudo chkconfig docker on
+sudo systemctl status docker
 
 docker run hello-world
 
