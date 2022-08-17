@@ -13,4 +13,4 @@ newgrp docker
 
 docker info
 sudo systemctl status docker
-docker run hello-world
+# docker run hello-world
