@@ -430,19 +430,15 @@ def main():
         get_summaries(output_df)
 
         # output few important stats
-        logger.info(
-            "========================================================================================================================================================"
-        )
+        logger.info("=" * 150)
         logger.info("The current status :")
         logger.info("Total number of jobs till now : %s" % len(output_df))
         logger.info(output_df.groupby("job_status").count()["job_id"])
-        logger.info(
-            "========================================================================================================================================================"
-        )
+        logger.info("=" * 150)
         # logger.info(df.groupby('job_name').count()['job_id'])
         # logger.info("The jobs with multiple attempts.")
         # logger.info(df[df['num_attempts'] > 1][['job_id', 'job_name', 'job_status', 'num_attempts', 'reasons']])
-        # logger.info("========================================================================================================================================================")
+        # logger.info("=" * 150)
         instance_arn_list = list(output_df["instance_arn_endings"].unique())
         instances_list = []
 
@@ -451,9 +447,7 @@ def main():
 
         instances_list = list(set(instances_list))
         logger.info("The no. of ec2 instances used are : %s" % len(instances_list))
-        logger.info(
-            "========================================================================================================================================================"
-        )
+        logger.info("=" * 150)
         logger.info("\n")
 
 
